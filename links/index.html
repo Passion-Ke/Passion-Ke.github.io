@@ -199,7 +199,8 @@
     
     
     
-   
+    
+    <div id="links">
     <ul class="ul">
     <style>
         .ul {
@@ -239,7 +240,7 @@
             width: 100%;
         }
 
-        .title {
+        .cardtitle {
             float: left;
             width: 228px;
             height: 72px;
@@ -270,19 +271,19 @@
             margin-top: 5px;
         }
 
-        .link {
+        .sitelink {
             text-decoration: none;
             color:#000000;
         }
     </style>
         
         <li class="li">
-            <a class="link" href="https://passion-ke.github.io/" target="_blank" rel="noopener">
+            <a class="sitelink" href="https://passion-ke.github.io/" target="_blank" rel="noopener">
             <div class="card">
                 <div class="avatar">
                     <img src="http://s1.wailian.download/2020/03/13/1581222545560.jpg">
                 </div>
-                <div class="title">
+                <div class="cardtitle">
                     <span class="nickname">
                         <p>畅谈小屋</p>
                     </span>
@@ -295,12 +296,12 @@
         </li>
         
         <li class="li">
-            <a class="link" href="https://passion-ke.github.io/" target="_blank" rel="noopener">
+            <a class="sitelink" href="https://passion-ke.github.io/" target="_blank" rel="noopener">
             <div class="card">
                 <div class="avatar">
                     <img src="http://s1.wailian.download/2020/03/13/1581222545560.jpg">
                 </div>
-                <div class="title">
+                <div class="cardtitle">
                     <span class="nickname">
                         <p>畅谈小屋</p>
                     </span>
@@ -312,8 +313,9 @@
             </a>
         </li>
         
-         </div>
-            <blockquote>
+
+    </ul>
+       <blockquote>
 <p>以上排名不分先后</p>
 </blockquote>
 <hr/>
@@ -335,11 +337,12 @@
 <a class="btn" href="mailto:512519860@qq.com">
             邮件互换
           </a>
-         </div>
-    </ul>
+    </div>
     
-    
-    
+  
+  
+  
+
 
         
       </div>
@@ -599,7 +602,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       appId      : 'nTBq3Ytx86WnCDki4kcgiXNO-gzGzoHsz',
       appKey     : 'Ap1wun7HIG3Yn15p3T7KOeB4',
       placeholder: "就差你的评论了",
-      avatar     : 'mm',
+      avatar     : 'retro',
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : false,
@@ -610,6 +613,12 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
+    var infoEle = document.querySelector('.info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
 </script>
 
 </body>

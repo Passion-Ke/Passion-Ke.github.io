@@ -452,7 +452,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       appId      : 'nTBq3Ytx86WnCDki4kcgiXNO-gzGzoHsz',
       appKey     : 'Ap1wun7HIG3Yn15p3T7KOeB4',
       placeholder: "就差你的评论了",
-      avatar     : 'mm',
+      avatar     : 'retro',
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : false,
@@ -463,6 +463,12 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
+    var infoEle = document.querySelector('.info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
 </script>
 
 </body>
