@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>博客的搭建—Hexo的使用</title>
+    <url>/2020/03/12/hexo-start/</url>
+    <content><![CDATA[<h2 id="Hexo是什么？"><a href="#Hexo是什么？" class="headerlink" title="Hexo是什么？"></a>Hexo是什么？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<a id="more"></a>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装 Hexo 非常简单，只需要提供以下支持即可：</p>
+<ul>
+<li><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>（Node.js版本需不低于8.10，建议使用Node.js 10.0以上版本）</li>
+<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<p>这两个程序的安装就不再赘述了。</p>
+<blockquote>
+<p>本文使用版本：Node.js v12.14.1，NPM 6.13.4 </p>
+</blockquote>
+<h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>使用 npm 安装 Hexo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+
+<p>安装 Hexo 完成后，执行下面命令，初始化Hexo (&lt;folder&gt;为指定hexo文件夹)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init &lt;folder&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>进入 &lt;folder&gt; 目录，安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，指定文件夹目录结构如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">├─ node_modules</span><br><span class="line">├─ scaffolds</span><br><span class="line">├─ source</span><br><span class="line">│  └─ _posts</span><br><span class="line">└─ themes</span><br><span class="line">│  └─ landscape</span><br><span class="line">├─ .gitignore</span><br><span class="line">├─ _config.yml</span><br><span class="line">├─ package.json</span><br><span class="line">└─ package-lock.json</span><br></pre></td></tr></table></figure>
+
+<h5 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h5><p>网站的配置信息，可以配置大部分参数。</p>
+<h5 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h5><p>应用程序的信息。EJS, Stylus和 Markdown renderer 已默认安装，可以自由移除。</p>
+<h5 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h5><p>模版文件夹。当新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
+<p>如果修改了某个文件的Front-matte内容，那每次新建一篇文章时都会包含这个修改。</p>
+<h5 id="source"><a href="#source" class="headerlink" title="source"></a>source</h5><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<h5 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h5><p>主题文件夹，Hexo会根据主题来生成静态页面。</p>
+<h4 id="config-yml-基本信息"><a href="#config-yml-基本信息" class="headerlink" title="_config.yml 基本信息"></a>_config.yml 基本信息</h4><h5 id="网站-Site"><a href="#网站-Site" class="headerlink" title="网站 # Site"></a>网站 # Site</h5><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">title:</span>        <span class="meta"># 网站标题</span></span><br><span class="line"><span class="symbol">subtitle:</span>     <span class="meta"># 网站副标题</span></span><br><span class="line"><span class="symbol">description:</span>  <span class="meta"># 网站描述</span></span><br><span class="line"><span class="symbol">keywords:</span>     <span class="meta"># 网站的关键词。使用半角逗号 , 分隔多个关键词。</span></span><br><span class="line"><span class="symbol">author:</span>       <span class="meta"># 你的名字</span></span><br><span class="line"><span class="symbol">language:</span>     <span class="meta"># 网站使用的语言</span></span><br><span class="line"><span class="symbol">timezone:</span>     <span class="meta"># 网站时区。Hexo 默认使用您电脑的时区。</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info no-icon">
+            <p><code>timezone</code> 如有需要，请参考 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code></p>
+          </div>
+
+<div class="note warning no-icon">
+            <p><code>description</code>主要用于SEO，告诉搜索引擎一个关于站点的简单描述，通常建议在其中包含网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+          </div>
+
+<h5 id="网址-URL"><a href="#网址-URL" class="headerlink" title="网址 # URL"></a>网址 # URL</h5><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">url:</span>                <span class="meta"># 网址</span></span><br><span class="line"><span class="symbol">root:</span>               <span class="meta"># 网站根目录</span></span><br><span class="line"><span class="symbol">permalink:</span>          <span class="meta"># 文章的永久链接格式</span></span><br><span class="line"><span class="symbol">permalink_defaults:</span> <span class="meta"># 永久链接中各部分的默认值</span></span><br><span class="line"><span class="symbol">pretty_urls:</span></span><br><span class="line"><span class="symbol">  trailing_index:</span>   <span class="meta"># 是否在永久链接中保留尾部的 index.html，设置为 false 时去除</span></span><br><span class="line"><span class="symbol">  trailing_html:</span>    <span class="meta"># 是否在永久链接中保留尾部的 .html, 设置为 false 时去除 (对尾部的 index.html无效)</span></span><br></pre></td></tr></table></figure>
+
+<div class="note warning">
+            <p>如果您的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
+          </div>
+
+<h5 id="目录-Directory"><a href="#目录-Directory" class="headerlink" title="目录 # Directory"></a>目录 # Directory</h5><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">source_dir:</span>    <span class="meta"># 资源文件夹，这个文件夹用来存放内容</span></span><br><span class="line"><span class="symbol">public_dir:</span>    <span class="meta"># 公共文件夹，这个文件夹用于存放生成的站点文件</span></span><br><span class="line"><span class="symbol">tag_dir:</span>       <span class="meta"># 标签文件夹</span></span><br><span class="line"><span class="symbol">archive_dir:</span>   <span class="meta"># 归档文件夹</span></span><br><span class="line"><span class="symbol">category_dir:</span>  <span class="meta"># 分类文件夹</span></span><br><span class="line"><span class="symbol">code_dir:</span>      <span class="meta"># Include code 文件夹，source_dir 下的子目录</span></span><br><span class="line"><span class="symbol">i18n_dir:</span>      <span class="meta"># 国际化（i18n）文件夹</span></span><br><span class="line"><span class="symbol">skip_render:</span>   <span class="meta"># 跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 glob 表达式来匹配路径。</span></span><br></pre></td></tr></table></figure>
+
+<div class="note warning">
+            <p>刚开始接触Hexo，这部分通常没必要修改</p>
+          </div>
+
+<blockquote>
+<p>其他具体信息可以访问 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo网址</a></p>
+</blockquote>
+<h3 id="本地测试启动"><a href="#本地测试启动" class="headerlink" title="本地测试启动"></a>本地测试启动</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo cl  <span class="comment"># 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span></span><br><span class="line"><span class="variable">$ </span>hexo g   <span class="comment"># 生成静态文件</span></span><br><span class="line"><span class="variable">$ </span>hexo s   <span class="comment"># 启动服务器</span></span><br></pre></td></tr></table></figure>
+
+<p>启动成功后会出现访问地址，访问：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<blockquote class="blockquote-center">
+            <p>恭喜你！到此为止，你的个人博客基本搭建完成了。</p>
+
+          </blockquote>]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开篇: Blog</title>
+    <url>/2020/03/11/first/</url>
+    <content><![CDATA[<h4 id="Welcome-to-My-Blog"><a href="#Welcome-to-My-Blog" class="headerlink" title="Welcome to My Blog!"></a><strong><em>Welcome to My Blog!</em></strong></h4><blockquote class="blockquote-center">
+            <p>祸兮福所倚，福兮祸所伏</p>
+
+          </blockquote>
+
+<a id="more"></a>
+
+<p>出于闲心开了这个博客，也想记录一些生活趣闻，分享一些技术心得。</p>
+<p>嗯~~ 就这样。</p>
+]]></content>
+      <categories>
+        <category>随笔闲谈</category>
+      </categories>
+      <tags>
+        <tag>代码之外</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+</search>
