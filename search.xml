@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客的搭建—NexT主题的使用</title>
+    <url>/2020/03/19/next-start/</url>
+    <content><![CDATA[<p>启动 Hexo 博客后我们会发现默认样式并不是很好看，因此我们需要修改默认的主题。在这里根据我的个人博客的主题，我会推荐NexT主题并说一下如何进行设置。</p>
+<a id="more"></a>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>Hexo主题非常之多，不一定要选择 NexT 主题 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">可以点此查看</a></p>
+</blockquote>
+<p>我们知道 Hexo 的配置文件为 <span class="label default">_config.yml</span> ，而NexT主题的配置文件也为 <span class="label default">_config.yml</span>。</p>
+<ol>
+<li>我们把 Hexo 的配置文件 <span class="label default">_config.yml</span> 称为 <span class="label success">站点配置文件</span>。</li>
+<li>我们把 NexT 的配置文件 <span class="label default">_config.yml</span> 称为 <span class="label primary">主题配置文件</span>。</li>
+</ol>
+<h3 id="NexT安装"><a href="#NexT安装" class="headerlink" title="NexT安装"></a>NexT安装</h3><p>主题安装非常容易，你可以下载一个主题 <a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">NexT</a>，把他放在站点根目录的<code>themes</code>目录下。</p>
+<div class="note primary no-icon">
+            <p>推荐使用Git:</p><p>移动到站点根目录下，使用git克隆存储库。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;hexo-folder&gt; </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure>
+          </div>
+
+<div class="note warning">
+            <p><strong>此为旧仓库已经不再维护，推荐使用上述新仓库。</strong></p><p><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a></p>
+          </div>
+
+<h3 id="启用NexT"><a href="#启用NexT" class="headerlink" title="启用NexT"></a>启用NexT</h3><p>要更改Hexo主题，只需要更改<span class="label success">站点配置文件</span>下<code>theme</code>为<code>themes</code>目录下主题的名称。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">themes:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+
+<p>现在就可以验证一下主题是否修改成功。我们做了修改后最好使用<code>hexo cl</code>来清除缓存，然后使用<code>hexo g</code>生成静态文件，使用<code>hexo s</code>启动本地测试。</p>
+<div class="note info no-icon">
+            <p>可以使用<code>hexo s --debug</code>查看运行时的输出。方便排错。</p>
+          </div>
+
+<p>现在已经完成了NexT主题的安装和启用，后续可以做一些主题更改、个性化设置和第三方插件使用。</p>
+<h3 id="NexT配置"><a href="#NexT配置" class="headerlink" title="NexT配置"></a>NexT配置</h3><p>到目前为止NexT主题支持四种方案。</p>
+<p>按官方描述为：</p>
+<ul>
+<li><strong><code>Muse</code></strong>→默认方案，这是NexT的初始版本。使用黑白色调，主要看起来干净。</li>
+<li><code>Mist</code> →带有整齐的单列视图的Muse的更紧密版本。</li>
+<li><code>Pisces</code> →双柱计划，像邻居的女儿一样新鲜。</li>
+<li><code>Gemini</code> →看起来像双鱼座，但具有明显的带阴影的列块，看起来对视图更敏感。</li>
+</ul>
+<p>在 <span class="label primary">主题配置文件</span> 找到 <code>scheme</code>关键词可以看到有四个选择，通过增删 <code>#</code> 来修改使用哪个方案。</p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">scheme:</span> <span class="string">Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h4><p>在主题目录下 <code>languages</code> 目录中为可选语言。</p>
+<p>编辑<span class="label success">站点配置文件</span>，找到 <code>language</code> 关键词填入选择的语言。</p>
+<figure class="highlight yaml"><figcaption><span>hexo / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="菜单配置"><a href="#菜单配置" class="headerlink" title="菜单配置"></a>菜单配置</h4><p>在<span class="label primary">主题配置文件</span>中找到 <code>menu</code> 关键词。</p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="comment">#tags: /tags/ || tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info no-icon">
+            <p>默认情况下只有 <code>home</code> 和 <code>archives</code> 其他页面需要自己手动创建。</p>
+          </div>
+
+<div class="note warning no-icon">
+            <p>如果你的网站在子目录中运行，请从链接中删除前缀 <code>/</code>。</p>
+          </div>
+
+<p>在默认情况下菜单是不显示图标的，在<span class="label primary">主题配置文件</span>中找到 <code>menu_settings</code> 关键词。</p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span>     <span class="comment"># 菜单是否显示图标</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span>   <span class="comment"># 菜单类别/标签/归档是否显示计数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="网站图标"><a href="#网站图标" class="headerlink" title="网站图标"></a>网站图标</h4><p>在<span class="label primary">主题配置文件</span>中找到关键词 <code>favicon</code> </p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="attr">android_manifest:</span> <span class="string">/images/manifest.json</span></span><br><span class="line">  <span class="attr">ms_browserconfig:</span> <span class="string">/images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>把你想要的网站图标放在 <code>hexo-site/themes/next/source/images/</code> 文件夹下，修改上述配置即可。</p>
+<h4 id="头像配置"><a href="#头像配置" class="headerlink" title="头像配置"></a>头像配置</h4><p>在<span class="label primary">主题配置文件</span>中找到关键词 <code>avatar</code> </p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><code>url</code> 为头像所在路径。</p>
+<ol>
+<li>可以放在 <code>next/source/images/</code> 路径下 (<code>url</code> 就像上述一样填写)。</li>
+<li><code>http://img1.imgtn.bdimg.com/it/u=3015897202,919054029&amp;fm=26&amp;gp=0.jpg</code> 可以用图像的绝对地址</li>
+</ol>
+<h4 id="控制台更新提醒"><a href="#控制台更新提醒" class="headerlink" title="控制台更新提醒"></a>控制台更新提醒</h4><p>在<span class="label primary">主题配置文件</span>中找到关键词 <code>reminder</code> </p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">reminder:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>设置为 true NexT会在控制台中自动检测更新和警报</p>
+<h4 id="缓存支持"><a href="#缓存支持" class="headerlink" title="缓存支持"></a>缓存支持</h4><p>在<span class="label primary">主题配置文件</span>中找到关键词 <code>cache</code> </p>
+<figure class="highlight yaml"><figcaption><span>next / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">cache:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>NexT v6 +允许缓存内容生成。</p>
+<blockquote class="blockquote-center">
+            <p>NexT主题基本的配置已经完成，所有主题的设置都可以访问<a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">NexT官方文档</a>自行查看。</p>
+
+          </blockquote>]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客的搭建—Hexo的使用</title>
     <url>/2020/03/12/hexo-start/</url>
     <content><![CDATA[<h2 id="Hexo是什么？"><a href="#Hexo是什么？" class="headerlink" title="Hexo是什么？"></a>Hexo是什么？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
