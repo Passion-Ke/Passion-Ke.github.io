@@ -24,7 +24,7 @@
           </div>
 
 <h3 id="启用NexT"><a href="#启用NexT" class="headerlink" title="启用NexT"></a>启用NexT</h3><p>要更改Hexo主题，只需要更改<span class="label success">站点配置文件</span>下<code>theme</code>为<code>themes</code>目录下主题的名称。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">themes:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><figcaption><span>hexo / _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">themes:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 
 <p>现在就可以验证一下主题是否修改成功。我们做了修改后最好使用<code>hexo cl</code>来清除缓存，然后使用<code>hexo g</code>生成静态文件，使用<code>hexo s</code>启动本地测试。</p>
 <div class="note info no-icon">
