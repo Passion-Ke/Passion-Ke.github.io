@@ -9,10 +9,10 @@
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
 <p>Hexo主题非常之多，不一定要选择 NexT 主题 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">可以点此查看</a></p>
 </blockquote>
-<p>我们知道 Hexo 的配置文件为 <span class="label default">_config.yml</span> ，而NexT主题的配置文件也为 <span class="label default">_config.yml</span>。</p>
+<p>我们知道 Hexo 的配置文件为 <code>_config.yml</code> ，而NexT主题的配置文件也为 <code>_config.yml</code>。</p>
 <ol>
-<li>我们把 Hexo 的配置文件 <span class="label default">_config.yml</span> 称为 <span class="label success">站点配置文件</span>。</li>
-<li>我们把 NexT 的配置文件 <span class="label default">_config.yml</span> 称为 <span class="label primary">主题配置文件</span>。</li>
+<li>我们把 Hexo 的配置文件 <code>_config.yml</code> 称为 <span class="label success">站点配置文件</span>。</li>
+<li>我们把 NexT 的配置文件 <code>_config.yml</code> 称为 <span class="label primary">主题配置文件</span>。</li>
 </ol>
 <h3 id="NexT安装"><a href="#NexT安装" class="headerlink" title="NexT安装"></a>NexT安装</h3><p>主题安装非常容易，你可以下载一个主题 <a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">NexT</a>，把他放在站点根目录的<code>themes</code>目录下。</p>
 <div class="note primary no-icon">
